@@ -41,6 +41,7 @@ jobs:
         TNAME: RM2100
       run: |
         cd /opt/rt-n56u/trunk
+        sed -i 's/size_etc="6M"/size_etc="64M"/g' user/scripts/dev_init.sh
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
